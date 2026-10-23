@@ -43,6 +43,10 @@ agent-browser --session research-1 snapshot -i
 
 Use a distinct `--session` name for each task. The plugin can request a new control URL for the same running Session after a CDP disconnect. To reuse saved browser state between runs, set `CAPYBROWSER_PROFILE_ID` as described in the [plugin guide](https://github.com/chaitin/baizhi-cloud-browser/tree/main/integrations/agent-browser).
 
+## Viewing and network routes
+
+The service also provides viewing links, confirmed human takeover, and optional platform-provided network routes through HTTP/MCP. Follow the [service integration guide](https://capybrowser.app.baizhi.cloud/docs/installation.md) for those features; version 0.1.3 of this plugin does not add corresponding commands. When extending a task for human interaction, pause page actions and automatic reconnect or cleanup until control is returned, then inspect the same Session before resuming. Watching, waiting, and human interaction remain billable runtime.
+
 ## End the remote Session
 
 Closing the agent-browser connection does not by itself end the remote Session. Explicitly end it and inspect the release and billing result:
