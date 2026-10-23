@@ -3,7 +3,7 @@ title: "Baizhi Cloud Browser"
 navTitle: "Baizhi Cloud Browser"
 ---
 
-[Baizhi Cloud Browser](https://capybrowser.app.baizhi.cloud) offers remote browser Sessions that can retain a browser Profile between runs and hand control to a person when needed. The independent [`agent-browser-plugin-capybrowser`](https://github.com/ctcbyzx/baizhi-cloud-browser/tree/main/integrations/agent-browser) plugin connects agent-browser to a Session through its CDP control URL. Agent-browser continues to handle page navigation and interaction.
+[Baizhi Cloud Browser](https://capybrowser.app.baizhi.cloud) offers remote browser Sessions that can retain a browser Profile between runs and hand control to a person when needed. The independent [`agent-browser-plugin-capybrowser`](https://github.com/chaitin/baizhi-cloud-browser/tree/main/integrations/agent-browser) plugin connects agent-browser to a Session through its CDP control URL. Agent-browser continues to handle page navigation and interaction.
 
 This is an external `browser.provider` plugin maintained by `ctcbyzx`, not a built-in agent-browser provider. The plugin is distributed as a GitHub Release archive, not through the npm registry.
 
@@ -41,7 +41,7 @@ agent-browser --session research-1 --provider capy open https://example.com
 agent-browser --session research-1 snapshot -i
 ```
 
-Use a distinct `--session` name for each task. The plugin can request a new control URL for the same running Session after a CDP disconnect. To reuse saved browser state between runs, set `CAPYBROWSER_PROFILE_ID` as described in the [plugin guide](https://github.com/ctcbyzx/baizhi-cloud-browser/tree/main/integrations/agent-browser).
+Use a distinct `--session` name for each task. The plugin can request a new control URL for the same running Session after a CDP disconnect. To reuse saved browser state between runs, set `CAPYBROWSER_PROFILE_ID` as described in the [plugin guide](https://github.com/chaitin/baizhi-cloud-browser/tree/main/integrations/agent-browser).
 
 ## End the remote Session
 
@@ -53,4 +53,4 @@ agent-browser plugin run capy capy.session.end --payload '{"session":"research-1
 agent-browser plugin run capy capy.session.inspect --payload '{"session":"research-1"}'
 ```
 
-If release or settlement remains pending, follow the [plugin's recovery instructions](https://github.com/ctcbyzx/baizhi-cloud-browser/tree/main/integrations/agent-browser) for the same Session. Browser downloads also remain in the remote Session; retrieve a ready artifact through the [Baizhi Cloud Browser download API](https://capybrowser.app.baizhi.cloud/docs/installation.md) before ending it.
+If release or settlement remains pending, follow the [plugin's recovery instructions](https://github.com/chaitin/baizhi-cloud-browser/tree/main/integrations/agent-browser) for the same Session. Browser downloads also remain in the remote Session; retrieve a ready artifact through the [Baizhi Cloud Browser download API](https://capybrowser.app.baizhi.cloud/docs/installation.md) before ending it.
